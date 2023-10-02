@@ -1,4 +1,4 @@
-const loadAllData =()=>{
+const loadAllData =(id)=>{
 
     const inputElement= document.getElementById("input-value")
     document.getElementById("details").innerHTML = ""
@@ -6,7 +6,8 @@ const loadAllData =()=>{
     document.getElementById("female").classList.add("d-none")
     const inputValue = inputElement.value
     document.getElementById("spinner").classList.remove("d-none")
-     const URL =  `https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=${inputValue}`
+    const search = id || inputValue;
+     const URL =  `https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=${search}`
     // console.log(inputValue)
     fetch(URL)
     .then(res=>res.json())
@@ -92,3 +93,5 @@ const delatePlayer = ()=>{
 
 
 }
+
+ loadAllData("ronaldo") 
