@@ -59,7 +59,7 @@ const showSinglePlayer = (data)=>{
 
     // console.log(data)
     const container = document.getElementById("details")
-    // container.innerText = ""
+    container.innerText = ""
     if(strGender==="Male"){
         const male = document.getElementById("male")
         male.classList.remove("d-none")
